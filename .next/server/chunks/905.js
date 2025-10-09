@@ -1,0 +1,1 @@
+"use strict";exports.id=905,exports.ids=[905],exports.modules={8905:t=>{t.exports=JSON.parse('{"home":{"title":"Card365へようこそ","description":"これは日本語のホームページです。"},"about":{"title":"Card365について","description":"これは日本語のサンプルaboutページです。"},"navbar":{"home":"ホーム","about":"About"},"footer":{"text":"\xa9 Card365"}}')}};

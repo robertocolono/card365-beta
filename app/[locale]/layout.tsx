@@ -1,4 +1,4 @@
-import {IntlProvider} from 'next-intl';
+import {NextIntlClientProvider} from 'next-intl';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -10,11 +10,11 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale}>
       <body>
-        <IntlProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           {children}
           <Footer />
-        </IntlProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
