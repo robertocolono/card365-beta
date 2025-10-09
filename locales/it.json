@@ -1,17 +1,15 @@
 {
-  "home": {
-    "title": "Benvenuto su Card365",
-    "description": "Questa è la home page in italiano."
+  "Home": {
+    "title": "Benvenuto su Card365 Beta 👑",
+    "subtitle": "Il marketplace di nuova generazione per carte da collezione.",
+    "cta": "Visita il sito Beta"
   },
-  "about": {
-    "title": "Informazioni su Card365",
-  "description": "Questa è una pagina \"about\" di esempio in italiano."
-  },
-  "navbar": {
+  "Navbar": {
     "home": "Home",
-    "about": "About"
+    "about": "Chi siamo",
+    "contact": "Contatti"
   },
-  "footer": {
-    "text": "© Card365"
+  "Footer": {
+    "copyright": "© 2025 Card365. Tutti i diritti riservati."
   }
 }

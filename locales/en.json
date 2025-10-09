@@ -1,17 +1,15 @@
 {
-  "home": {
-    "title": "Welcome to Card365",
-    "description": "This is the English home page."
+  "Home": {
+    "title": "Welcome to Card365 Beta 👑",
+    "subtitle": "The next-gen marketplace for collectible cards.",
+    "cta": "Visit the Beta Site"
   },
-  "about": {
-    "title": "About Card365",
-    "description": "This is an example about page in English."
-  },
-  "navbar": {
+  "Navbar": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "contact": "Contact"
   },
-  "footer": {
-    "text": "© Card365"
+  "Footer": {
+    "copyright": "© 2025 Card365. All rights reserved."
   }
 }

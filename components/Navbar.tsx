@@ -1,95 +1,37 @@
 'use client';
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const [lang, setLang] = useState<"en" | "it" | "jp">("en");
-  const [isLogged, setIsLogged] = useState(false);
-
-  const translations = {
-    en: {
-      marketplace: "Marketplace",
-      createAccount: "Create Account",
-      login: "Login",
-      sell: "Become a Seller",
-      logout: "Logout",
-    },
-    it: {
-      marketplace: "Marketplace",
-      createAccount: "Crea Account",
-      login: "Accedi",
-      sell: "Diventa Venditore",
-      logout: "Esci",
-    },
-    jp: {
-      marketplace: "マーケットプレイス",
-      createAccount: "アカウント作成",
-      login: "ログイン",
-      sell: "販売者になる",
-      logout: "ログアウト",
-    },
-  };
-
-  const t = translations[lang];
-  const [isHome, setIsHome] = useState(true);
-
-  useEffect(() => {
-    setIsHome(pathname === "/");
-  }, [pathname]);
-
-  if (isHome) return null;
+  const { lang, t, setLang } = useLanguage();
 
   return (
-    <nav className="w-full bg-white border-b border-neutral-200 py-4 px-8 shadow-sm">
-      <div className="flex justify-between items-center max-w-6xl mx-auto">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-yellow-500">
-          Card365
+    <nav className="flex justify-between items-center p-4 border-b border-gray-300">
+      <Link href="/" className="text-2xl font-bold text-yellow-600">
+        Card365
+      </Link>
+
+      <div className="flex gap-6 items-center">
+        <Link href="/marketplace" className="hover:text-yellow-500">
+          {t("marketplace")}
+        </Link>
+        <Link href="/register" className="hover:text-yellow-500">
+          {t("createAccount")}
+        </Link>
+        <Link href="/login" className="hover:text-yellow-500">
+          {t("login")}
         </Link>
 
-        {/* Menu */}
-        <div className="flex items-center gap-6">
-          <Link href="/marketplace" className="hover:text-yellow-500 transition">
-            {t.marketplace}
-          </Link>
-
-          {!isLogged ? (
-            <>
-              <Link href="/register" className="hover:text-yellow-500 transition">
-                {t.createAccount}
-              </Link>
-              <Link href="/login" className="hover:text-yellow-500 transition">
-                {t.login}
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link href="/sell" className="hover:text-yellow-500 transition">
-                {t.sell}
-              </Link>
-              <button
-                onClick={() => setIsLogged(false)}
-                className="hover:text-red-500 transition"
-              >
-                {t.logout}
-              </button>
-            </>
-          )}
-
-          {/* Language Switcher */}
-          <select
-            value={lang}
-            onChange={(e) => setLang(e.target.value as "en" | "it" | "jp")}
-            className="border border-neutral-300 rounded-md px-2 py-1 text-sm bg-white"
-          >
-            <option value="en">EN</option>
-            <option value="it">IT</option>
-            <option value="jp">JP</option>
-          </select>
-        </div>
+        <select
+          value={lang}
+          onChange={(e) => setLang(e.target.value)}
+          className="border border-gray-300 rounded px-2 py-1 text-sm"
+        >
+          <option value="en">EN</option>
+          <option value="it">IT</option>
+          <option value="ja">日本語</option>
+        </select>
       </div>
     </nav>
   );
