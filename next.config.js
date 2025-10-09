@@ -1,12 +1,9 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  i18n: {
-    locales: ['en', 'it', 'ja'],
-    defaultLocale: 'en'
-  },
   eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true }
+  typescript: { ignoreBuildErrors: true },
+  experimental: {
+    appDir: true, // se usi App Router
+  },
 };
-
 export default nextConfig;

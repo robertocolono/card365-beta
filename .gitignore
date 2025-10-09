@@ -1,1 +1,5 @@
 node_modules
+
+# Ignore accidental builds in public
+public/_app
+public/app
