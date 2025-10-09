@@ -1,0 +1,17 @@
+{
+  "home": {
+    "title": "Benvenuto su Card365",
+    "description": "Questa è la home page in italiano."
+  },
+  "about": {
+    "title": "Informazioni su Card365",
+  "description": "Questa è una pagina \"about\" di esempio in italiano."
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About"
+  },
+  "footer": {
+    "text": "© Card365"
+  }
+}
